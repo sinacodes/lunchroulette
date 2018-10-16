@@ -1,18 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from 'react-emotion'
+// import styled from 'react-emotion'
 
+import Background from '../components/background'
 import Layout from '../components/layout'
 
-const Wrapper = styled('div')`
-  color: turquoise;
-`; 
+// here happens everything!
 
-const IndexPage = () => (
+const IndexPage = (props) => (
   <Layout>
-    <Wrapper>
-    first lines of emotion
-    </Wrapper>
+    <Background first={props.first}/>
     <Link to="/page-2/">Jetzt unbedingt hier klicken.</Link>
   </Layout>
 )

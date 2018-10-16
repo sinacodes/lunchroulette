@@ -168,7 +168,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: #F5F5F5;
   font-family: 'Suez One', serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -177,6 +177,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  text-align: center;
 }
 img {
   max-width: 100%;
