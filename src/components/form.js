@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'react-emotion'
 
+import { fadeinSink } from './animations'
+
 const StyledForm = styled('form')`
     display: flex;
     flex-direction: column;
@@ -10,6 +12,7 @@ const StyledForm = styled('form')`
 
 const StyledFormWrapper = styled('div')`
     margin-top: 50px;
+    animation: ${fadeinSink} 1.8s ease;
 `;
 
 const StyledSpan = styled('span')`
@@ -26,48 +29,49 @@ const StyledSpan = styled('span')`
     }
 
     input[type="radio"] + label::before {
-  transition: all 250ms cubic-bezier(.4,.25,.3,1);
-  content: "";
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: white;
-  border: 0px solid white;
-  font-size: 0;
-  position: absolute;
-  bottom: 145%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-}
+        transition: all 250ms cubic-bezier(.4,.25,.3,1);
+        content: "";
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: white;
+        border: 0px solid white;
+        font-size: 0;
+        position: absolute;
+        bottom: 145%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
 
-input[type="radio"] + label::after {
-  transition: all 250ms cubic-bezier(.4,.25,.3,1);
-  content: "";
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute;
-  bottom: 145%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-}
+    input[type="radio"] + label::after {
+        transition: all 250ms cubic-bezier(.4,.25,.3,1);
+        content: "";
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        bottom: 145%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
 
-input[type="radio"]:checked + label::after {
-  width: 15px;
-  height: 15px;
-}
+    input[type="radio"]:checked + label::after {
+        width: 15px;
+        height: 15px;
+    }
 
-input[type="radio"]:checked + label::before {
-  background-color: transparent;
-  width: 25px;
-  height: 25px;
-  border-width: 2px;
-}
+    input[type="radio"]:checked + label::before {
+        background-color: transparent;
+        width: 25px;
+        height: 25px;
+        border-width: 2px;
+    }
 `;
 
 const StyledButtonWrap = styled('div')`
     margin: 50px 0;
+    animation: ${fadeinSink} 1s ease;
 `;
 
 const StyledButton = styled('button')`
