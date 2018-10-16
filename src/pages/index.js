@@ -1,17 +1,35 @@
 import React from 'react'
-import { Link } from 'gatsby'
 // import styled from 'react-emotion'
 
 import Background from '../components/background'
 import Layout from '../components/layout'
+import Form from '../components/form'
+import Answer from '../components/answer'
 
-// here happens everything!
+class IndexPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handler = this.handler.bind(this);
+    this.state = {
+        showAnswer: false
+    };
+  }
 
-const IndexPage = (props) => (
-  <Layout>
-    <Background first={props.first}/>
-    <Link to="/page-2/">Jetzt unbedingt hier klicken.</Link>
-  </Layout>
-)
+  handler(result) {
+    this.setState({
+        showAnswer: true,
+        result: result
+    });
+  }
+
+  render() {
+    return (
+      <Layout>
+      <Background answer={this.state.showAnswer}/>
+      {this.state.showAnswer ? <Answer duration={this.state.result} /> : <Form handler={this.handler} />}
+    </Layout>
+    )
+  }
+}
 
 export default IndexPage
